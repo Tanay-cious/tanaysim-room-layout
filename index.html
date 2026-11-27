@@ -34,6 +34,7 @@ aside{background:var(--surface);border-right:1px solid var(--line);display:flex;
 .brand p{margin:3px 0 0;color:var(--muted);font-size:12px}
 .mode{display:inline-block;margin-top:6px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;background:var(--surface-2);color:var(--muted)}
 .mode.ed{background:#fdecc8;color:#8a5a00}
+.mode:empty,.mode[hidden]{display:none}
 body.ro .add,body.ro #autoBtn,body.ro #clearAuto,body.ro #saveFile,body.ro label:has(#loadFile),body.ro #saveState,body.ro #resetPlan,body.ro #resetAssign,body.ro .chip .x,body.ro .brand p{display:none!important}
 body.ro .chip{cursor:default}
 body.ro #publishBtn,body.local #publishBtn{display:none!important}
@@ -239,6 +240,43 @@ main{overflow:auto;min-width:0;position:relative}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:12px;font-size:12.5px;opacity:0;transition:.25s;z-index:30;max-width:560px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .foot{font-size:11.5px;color:var(--muted);padding:0 22px 30px;margin-top:-90px}
+/* ---------- phones & small tablets ---------- */
+.chip.picked{outline:2.5px solid var(--accent);outline-offset:1px;background:var(--accent-soft)}
+body.picking .seat:not(.reserved){outline:1.5px dashed color-mix(in srgb,var(--accent) 60%,transparent);outline-offset:2px}
+body.picking #pool{outline:1.5px dashed var(--accent);outline-offset:-4px}
+@media (max-width:760px){
+  html,body{height:auto}
+  .app{display:block;height:auto}
+  aside{border-right:0;border-bottom:1px solid var(--line)}
+  .brand{padding:14px 14px 6px}
+  .brand h1{font-size:19px}
+  .brand p,.add{display:none}
+  .rfilter{padding:0 14px}
+  .progress{margin:8px 14px 2px}
+  #pool{flex:none;max-height:34vh;padding:6px 14px 12px}
+  main{overflow:visible}
+  .top{position:static;padding:10px 12px 8px;backdrop-filter:none}
+  .toprow{gap:6px}
+  .toprow .spacer{display:none}
+  #wingSeg{width:100%;display:flex}
+  #wingSeg button{flex:1;padding:6px 4px}
+  .toggle{font-size:12px}
+  #stats{width:100%;font-size:12px}
+  .rules{margin-top:8px;padding:6px 8px;gap:6px}
+  .rules .rl,.rules .ru,.rules .spacer{display:none}
+  .legend{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .legend>*{flex:none}
+  .halls{padding:12px 8px 96px;gap:14px}
+  .hall{width:100%;padding:12px 10px;border-radius:14px}
+  .hall-h{flex-wrap:wrap;gap:2px 8px}
+  .floor{grid-template-columns:32px 1fr}
+  .flabel{margin-right:6px}
+  .flabel b{font-size:13px}
+  .insp{left:8px!important;right:8px!important;bottom:8px!important;top:auto!important;width:auto;max-height:55vh;overflow:auto;pointer-events:auto}
+  .toast{max-width:calc(100% - 24px);bottom:14px;text-align:center}
+  .nosave{width:calc(100% - 24px)}
+  .foot{padding:0 12px}
+}
 @media print{aside,.top,.insp{display:none}.app{display:block}main{overflow:visible}}
 </style>
 </head>
@@ -608,7 +646,7 @@ let wingF="all", catF=new Set(), onlyFree=false, onlyTent=false, q="", sideF="";
 
 const srch=p=>[p.name,p.family,p.side,p.tent?"tentative":""].join(" ").toLowerCase();
 function chipEl(p,inRoom){
-  const d=document.createElement("div"); d.className="chip"+(S.auto[p.id]?" auto":"")+(p.tent?" tent":""); d.draggable=!RO; d.dataset.pid=p.id; d.dataset.fam=p.family||"";
+  const d=document.createElement("div"); d.className="chip"+(S.auto[p.id]?" auto":"")+(p.tent?" tent":"")+(p.id===picked?" picked":""); d.draggable=!RO; d.dataset.pid=p.id; d.dataset.fam=p.family||"";
   d.style.setProperty("--sc",sideColor(p.side));
   const gx=`<span class="gx ${p.gender||"U"}" title="${p.gender==="M"?"Male":p.gender==="F"?"Female":"Gender not set"}">${p.gender==="M"?"♂":p.gender==="F"?"♀":"?"}</span>`;
   const ag=(AGEI[p.age]?`<span class="ag" title="${p.age}">${AGEI[p.age]}</span>`:"")+(p.tent?`<span class="tq" title="Tentative">?</span>`:"");
@@ -620,6 +658,7 @@ function chipEl(p,inRoom){
   d.addEventListener("dragstart",e=>{e.dataTransfer.setData("text/plain",p.id);e.dataTransfer.effectAllowed="move";d.classList.add("dragging");e.stopPropagation()});
   d.addEventListener("dragend",()=>d.classList.remove("dragging"));
   if(!RO) d.addEventListener("dblclick",e=>{e.stopPropagation();editPerson(p);});
+  if(!RO) d.addEventListener("click",e=>{ if(!isTouch()||e.target.closest(".x")) return; e.stopPropagation(); $("#insp").classList.remove("show"); if(picked===p.id){ setPicked(null); toast("Cancelled"); } else { setPicked(p.id); toast(`Moving ${p.name} — tap a room (or the guest list to unassign)`); } });
   if(!RO) d.addEventListener("contextmenu",e=>{e.preventDefault();e.stopPropagation();if(p.tent)delete p.tent;else p.tent=true;save();render();toast(`${p.name}: ${p.tent?"marked tentative":"confirmed"}`);});
   if(p.family){
     d.addEventListener("mouseenter",()=>{document.querySelectorAll(`.chip[data-fam="${CSS.escape(p.family)}"]`).forEach(c=>c.classList.add("famhl"));
@@ -665,7 +704,8 @@ function seatEl(id){
   if(r.reserved){ el.classList.add("reserved"); el.querySelector(".beds").remove(); nm.innerHTML=`<div class="rsv">${r.reserved}</div>`; el.title=`Kept for ${r.reserved}`; return el; }
   dropZone(el,pid=>{S.assign[pid]=id;});
   el.addEventListener("mouseenter",()=>{inspect(id);if(r.pair)document.querySelector(`[data-room="${r.pair}"]`)?.classList.add("hl")});
-  el.addEventListener("mouseleave",()=>{$("#insp").classList.remove("show");if(r.pair)document.querySelector(`[data-room="${r.pair}"]`)?.classList.remove("hl")});
+  el.addEventListener("click",()=>{ if(picked){ movePicked(id); return; } if(isTouch()) inspect(id); });
+  el.addEventListener("mouseleave",()=>{if(isTouch())return; $("#insp").classList.remove("show");if(r.pair)document.querySelector(`[data-room="${r.pair}"]`)?.classList.remove("hl")});
   el.addEventListener("dblclick",e=>{if(RO||e.target.closest(".chip"))return;const v=prompt(`Beds / capacity for room ${id}`,cap);if(v!==null&&+v>0){S.caps[id]=+v;save();render();}});
   return el;
 }
@@ -694,6 +734,12 @@ function placeInsp(box,el){
   ["left","right","top","bottom"].forEach(k=>box.style[k]=sp[k]!=null?sp[k]+"px":"auto");
 }
 let dragging=false;
+const isTouch=()=>matchMedia("(hover: none)").matches;   // phones/tablets: tap instead of hover & drag
+let picked=null;
+function setPicked(id){ picked=id; document.querySelectorAll(".chip.picked").forEach(c=>c.classList.remove("picked")); if(id) document.querySelectorAll(`.chip[data-pid="${id}"]`).forEach(c=>c.classList.add("picked")); document.body.classList.toggle("picking",!!id); }
+function movePicked(to){ const p=S.people.find(x=>x.id===picked); if(!p) return setPicked(null);
+  if(to) S.assign[p.id]=to; else delete S.assign[p.id]; delete S.auto[p.id]; setPicked(null); save(); render(); toast(to?`${p.name} → ${LB(to)}`:`${p.name} unassigned`); }
+document.addEventListener("click",e=>{ if(isTouch()&&!e.target.closest(".seat,.insp")) $("#insp").classList.remove("show"); });
 document.addEventListener("dragstart",()=>{dragging=true;$("#insp").classList.remove("show");});
 document.addEventListener("dragend",()=>{dragging=false;});
 let toastT; function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("show"),4500);}
@@ -763,6 +809,7 @@ function render(){
 
 /* ================= CONTROLS ================= */
 dropZone($("#pool"),pid=>{delete S.assign[pid];});
+$("#pool").addEventListener("click",e=>{ if(picked&&!e.target.closest(".chip")) movePicked(null); });
 $("#addBtn").onclick=()=>{
   const ppl=parseList($("#names").value); S.people.push(...ppl); $("#names").value=""; save(); render();
   if(ppl.length) toast(`Added ${ppl.length} ${ppl.length===1?"person":"people"} · ${ppl.filter(p=>p.side==="Groom").length} groom side · ${ppl.filter(p=>p.side==="Bride").length} bride side · ${new Set(ppl.map(p=>p.family).filter(Boolean)).size} families`);
