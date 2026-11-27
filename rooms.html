@@ -36,6 +36,9 @@ aside{background:var(--surface);border-right:1px solid var(--line);display:flex;
 .mode.ed{background:#fdecc8;color:#8a5a00}
 body.ro .add,body.ro #autoBtn,body.ro #clearAuto,body.ro #saveFile,body.ro label:has(#loadFile),body.ro #saveState,body.ro #resetPlan,body.ro #resetAssign,body.ro .chip .x,body.ro .brand p{display:none!important}
 body.ro .chip{cursor:default}
+body.ro #publishBtn,body.local #publishBtn{display:none!important}
+#publishBtn{position:relative}
+#publishBtn.pending::after{content:"";position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#e8590c;border:2px solid var(--surface)}
 .add{padding:0 18px 10px}
 textarea{width:100%;height:84px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:9px 10px;background:var(--surface-2);font-size:12px;outline:none;font-family:ui-monospace,Menlo,monospace}
 textarea:focus,.search:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
@@ -276,6 +279,7 @@ main{overflow:auto;min-width:0;position:relative}
         <span class="spacer"></span>
         <button class="btn magic" id="autoBtn">✨ Auto-allot</button>
         <button class="btn ghost" id="clearAuto" title="Remove only the auto-placed people (hand-placed stay)">Undo auto</button>
+        <button class="btn primary" id="publishBtn" title="Save this arrangement to GitHub so everyone on the view link sees it">🚀 Publish</button>
         <button class="btn ghost" id="saveFile" title="Download your whole arrangement as a file">⬇ Backup</button>
         <label class="btn ghost" title="Load an arrangement from a backup file">⬆ Load<input type="file" id="loadFile" accept=".json,application/json" hidden></label>
         <span class="stat" id="saveState"></span>
@@ -462,14 +466,15 @@ if(ONLINE&&new URLSearchParams(location.search).has("edit")){
   EDITING=ok;
 }
 const RO=!EDITING;
-let S=planState();
+let S=planState(), HAD_DRAFT=false;
 if(!RO) try{
   const s=JSON.parse(localStorage.getItem(KEY)) ;
-  if(s&&s.people){ s.people=s.people.map(p=>({side:"",gender:"",age:"Adult",family:p.family??p.group??"",...p})); S=Object.assign(S,s); S.auto=S.auto||{}; migrate(S); }
+  if(s&&s.people){ s.people=s.people.map(p=>({side:"",gender:"",age:"Adult",family:p.family??p.group??"",...p})); S=Object.assign(S,s); S.auto=S.auto||{}; migrate(S); HAD_DRAFT=true; }
 }catch(e){}
 let CAN_SAVE=true; try{localStorage.setItem(KEY+".probe","1"); localStorage.removeItem(KEY+".probe");}catch(e){CAN_SAVE=false;}
 let dirty=false;
-const save=()=>{if(RO)return; dirty=true; try{localStorage.setItem(KEY,JSON.stringify(S)); $("#saveState").textContent="Saved ✓ "+new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});}catch(e){}};
+const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}};
+const save=()=>{if(RO)return; dirty=true; if(ONLINE) S.unpub=true; try{localStorage.setItem(KEY,JSON.stringify(S)); $("#saveState").textContent="Saved ✓ "+new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});}catch(e){}};
 // warn before closing/reloading when changes can't be kept by the browser
 window.addEventListener("beforeunload",e=>{ if(!CAN_SAVE&&dirty){ e.preventDefault(); e.returnValue=""; } });
 const capOf=id=>R[id].reserved?0:(S.caps[id]??R[id].cap);
@@ -707,6 +712,7 @@ function render(){
   else if(!un.length) pool.innerHTML=`<div class="empty">${sideF==="?"&&!q?(S.people.some(p=>p.tent)?"Tentative guests are highlighted in their rooms":"Nobody is tentative — right-click a guest to mark one"):q||sideF?(q&&S.people.some(p=>S.assign[p.id]&&[p.name,p.family].join(" ").toLowerCase().includes(q))?"Already in a room:":"No match"):"Everyone has a room 🎉"}</div>`;
   const total=S.people.length, done=S.people.filter(p=>S.assign[p.id]).length;
   const g=S.people.filter(p=>S.assign[p.id]&&p.side==="Groom").length, b=S.people.filter(p=>S.assign[p.id]&&p.side==="Bride").length;
+  $("#publishBtn").classList.toggle("pending",!!S.unpub); $("#publishBtn").title=S.unpub?"You have changes not published yet":"Everything is published";
   const nt=S.people.filter(p=>p.tent).length; $("#plbl").textContent=`${done} of ${total} placed`+(nt?` · ${nt} tentative`:""); $("#tentN").textContent=nt; $("#tentN").style.display=nt?"":"none"; $("#pleft").textContent=total-done?`${total-done} left`:"";
   $("#pbar").innerHTML=total?`<i style="width:${g/total*100}%;background:var(--groom)"></i><i style="width:${b/total*100}%;background:var(--bride)"></i><i style="width:${(done-g-b)/total*100}%;background:var(--noside)"></i>`:"";
 
@@ -765,15 +771,15 @@ $("#clearPeople").onclick=()=>{if(confirm("Remove all people and assignments?"))
 $("#resetAssign").onclick=()=>{if(confirm("Unassign everyone (including hand-placed)?")){S.assign={};S.auto={};save();render();}};
 $("#autoBtn").onclick=autoAllot;
 if(!CAN_SAVE&&!RO) $("#nosave").hidden=false;
-document.body.classList.toggle("ro",RO);
-$("#modeTag").textContent=RO?"👀 View only":ONLINE?"✎ Editing — saved in this browser only · ⬇ Backup to publish":"";
+document.body.classList.toggle("ro",RO); document.body.classList.toggle("local",!ONLINE);
+$("#modeTag").textContent=RO?"👀 View only":ONLINE?"✎ Editing — click 🚀 Publish to update the view link":"";
 $("#modeTag").classList.toggle("ed",!RO); if(!RO&&!ONLINE) $("#modeTag").hidden=true;
 $("#saveFile").onclick=()=>{const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([JSON.stringify(S,null,1)],{type:"application/json"}));
   a.download=`rooms-backup-${new Date().toISOString().slice(0,16).replace(/[:T]/g,"-")}.json`; a.click(); dirty=false; toast("Backup downloaded");};
 $("#loadFile").onchange=e=>{const f=e.target.files[0]; if(!f) return; f.text().then(t=>{ try{ const s=JSON.parse(t); if(!s.people||!s.assign) throw 0;
   if(!confirm(`Load backup "${f.name}"? It replaces what's on screen.`)) return;
   S=Object.assign(planState(),s); S.auto=S.auto||{}; S.caps=S.caps||{}; migrate(S); save(); render(); toast("Backup loaded"); }catch(err){ alert("That file isn't a rooms backup."); } e.target.value=""; });};
-$("#resetPlan").onclick=()=>{if(!confirm("Reset everything to the final plan? Your drag-drop changes will be lost."))return;S=planState();save();render();toast("Reset to final plan");};
+$("#resetPlan").onclick=()=>{if(ONLINE){ if(!confirm("Throw away your unpublished changes and load the published version?"))return; loadPublished(true); return; } if(!confirm("Reset everything to the final plan? Your drag-drop changes will be lost."))return;S=planState();save();render();toast("Reset to final plan");};
 $("#clearAuto").onclick=()=>{const n=Object.keys(S.auto).length;Object.keys(S.auto).forEach(pid=>delete S.assign[pid]);S.auto={};save();render();toast(`Removed ${n} auto placements`);};
 
 $("#q").oninput=e=>{q=e.target.value.toLowerCase().trim();render();const f=document.querySelector(".seat.found");if(f)f.scrollIntoView({block:"center",inline:"center"});};
@@ -796,6 +802,57 @@ $("#copyTxt").onclick=e=>{
   navigator.clipboard.writeText(t||"(no assignments)").then(()=>{e.target.textContent="Copied ✓";setTimeout(()=>e.target.textContent="Copy list",1200)});
 };
 render();
+
+// ===== Published plan lives in plan.json in the GitHub repo (no database) =====
+const REPO="Tanay-cious/tanaysim-room-layout", PLAN_FILE="plan.json";
+const API=`https://api.github.com/repos/${REPO}/contents/${PLAN_FILE}`;
+const norm=s=>{s.people=(s.people||[]).map(p=>({side:"",gender:"",age:"Adult",family:"",...p})); s.auto=s.auto||{}; s.caps=s.caps||{}; s.assign=s.assign||{}; return s;};
+const b64dec=t=>new TextDecoder().decode(Uint8Array.from(atob(t.replace(/\s/g,"")),c=>c.charCodeAt(0)));
+const b64enc=t=>{const u=new TextEncoder().encode(t); let b=""; for(let i=0;i<u.length;i+=8192) b+=String.fromCharCode.apply(null,u.subarray(i,i+8192)); return btoa(b);};
+async function fetchPublished(headers){
+  try{ const r=await fetch(API+"?t="+Date.now(),{cache:"no-store",headers:{Accept:"application/vnd.github+json",...(headers||{})}});
+       if(r.ok){const j=await r.json(); return {s:JSON.parse(b64dec(j.content)),sha:j.sha};} }catch(e){}
+  try{ const r=await fetch(PLAN_FILE+"?t="+Date.now(),{cache:"no-store"}); if(r.ok) return {s:await r.json(),sha:null}; }catch(e){}   // fallback (GitHub API rate limit)
+  return null;
+}
+function usePublished(pub){ S=Object.assign(planState(),norm(pub.s)); migrate(S); S.baseSha=pub.sha; S.unpub=false; if(!RO) persist(); }
+async function loadPublished(force){
+  if(!ONLINE) return;
+  const pub=await fetchPublished(); if(!pub){ if(force) toast("Couldn't reach GitHub — try again"); return; }
+  if(RO||force||!HAD_DRAFT) usePublished(pub);
+  else if(S.baseSha==null){ S.baseSha=pub.sha; S.unpub=true; persist(); }            // edits made before Publish existed: keep them, ready to publish
+  else if(pub.sha&&S.baseSha!==pub.sha){
+    if(!S.unpub) usePublished(pub);
+    else if(confirm("Someone published a newer version since you last edited.\n\nOK = load the newer version (your unpublished changes are dropped)\nCancel = keep your changes")) usePublished(pub);
+  }
+  if(force) toast("Loaded the published version");
+  render();
+}
+async function publish(){
+  let tok=""; try{tok=localStorage.getItem("tanaysim.ghToken")||"";}catch(e){}
+  if(!tok){ tok=(prompt("Paste the GitHub token for publishing.\nIt is saved in this browser only.")||"").trim(); if(!tok) return; }
+  const btn=$("#publishBtn"); btn.disabled=true; btn.textContent="Publishing…";
+  try{
+    const H={Authorization:"Bearer "+tok,Accept:"application/vnd.github+json"};
+    const cur=await fetch(API+"?t="+Date.now(),{headers:H,cache:"no-store"});
+    if(cur.status===401||cur.status===403) throw new Error("token");
+    const cj=cur.ok?await cur.json():null;
+    if(cj&&S.baseSha&&cj.sha!==S.baseSha&&!confirm("Someone else published after you started editing.\nPublish yours anyway and replace theirs?")) return;
+    const {baseSha,unpub,...data}=S;
+    const who=new URLSearchParams(location.search).get("by")||"site";
+    const r=await fetch(API,{method:"PUT",headers:H,body:JSON.stringify({message:`Update room allotment (${who}, ${new Date().toLocaleString("en-IN")})`,content:b64enc(JSON.stringify(data,null,1)),...(cj?{sha:cj.sha}:{})})});
+    if(r.status===401||r.status===403||r.status===404) throw new Error("token");
+    if(!r.ok){ let m=r.status; try{m=(await r.json()).message||m;}catch(e){} throw new Error(m); }
+    const rj=await r.json(); S.baseSha=rj.content.sha; S.unpub=false; persist();
+    try{localStorage.setItem("tanaysim.ghToken",tok);}catch(e){}
+    toast("Published ✓ — everyone on the view link sees it now (refresh)");
+  }catch(e){
+    if(e.message==="token"){ try{localStorage.removeItem("tanaysim.ghToken");}catch(_){} toast("GitHub didn't accept that token — check it and click Publish again"); }
+    else toast("Publish failed: "+e.message);
+  }finally{ btn.disabled=false; btn.textContent="🚀 Publish"; render(); }
+}
+$("#publishBtn").onclick=publish;
+loadPublished();
 </script>
 </body>
 </html>

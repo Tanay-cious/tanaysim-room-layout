@@ -1,0 +1,1242 @@
+{
+ "people": [
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Old",
+   "family": "Khandelwal (Anurag)",
+   "id": "f0",
+   "name": "Padma Khandelwal",
+   "yrs": 70
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Khandelwal (Anurag)",
+   "id": "f1",
+   "name": "Meena Khandelwal",
+   "yrs": 55
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Khandelwal (Mahesh)",
+   "id": "f2",
+   "name": "Asha Khandelwal",
+   "yrs": 67
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Khandelwal (Anurag)",
+   "id": "f3",
+   "name": "Shobha Khandelwal",
+   "yrs": 64
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Srivastava (Gwalior)",
+   "id": "f4",
+   "name": "Meena Srivastava",
+   "yrs": 67
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Srivastava (Gwalior)",
+   "id": "f5",
+   "name": "Shashi Srivastava",
+   "yrs": 33
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Srivastava (Delhi)",
+   "id": "f6",
+   "name": "Ajay Srivastava",
+   "yrs": 65
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Srivastava (Delhi)",
+   "id": "f7",
+   "name": "Manju Srivastava (Delhi)",
+   "yrs": 57
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Khandelwal (Anurag)",
+   "id": "f8",
+   "name": "Virendra Khandelwal (Veenu)",
+   "yrs": 65
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Khandelwal (Anurag)",
+   "id": "f9",
+   "name": "Nisha Khandelwal",
+   "yrs": 65
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Khandelwal (Sunita)",
+   "id": "f10",
+   "name": "Rajkumar Khandelwal",
+   "yrs": 60
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Khandelwal (Sunita)",
+   "id": "f11",
+   "name": "Sunita Khandelwal",
+   "yrs": 60
+  },
+  {
+   "side": "Bride",
+   "gender": "",
+   "age": "Elder",
+   "family": "Jaipur",
+   "id": "f12",
+   "name": "Jaipur guest 3",
+   "yrs": 60
+  },
+  {
+   "side": "Bride",
+   "gender": "",
+   "age": "Elder",
+   "family": "Jaipur",
+   "id": "f13",
+   "name": "Jaipur guest 4",
+   "yrs": 60
+  },
+  {
+   "side": "Bride",
+   "gender": "",
+   "age": "Elder",
+   "family": "Jaipur",
+   "id": "f14",
+   "name": "Jaipur guest 1",
+   "yrs": 55
+  },
+  {
+   "side": "Bride",
+   "gender": "",
+   "age": "Elder",
+   "family": "Jaipur",
+   "id": "f15",
+   "name": "Jaipur guest 2",
+   "yrs": 60
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Srivastava (Delhi)",
+   "id": "f16",
+   "name": "Alka Srivastava",
+   "yrs": 54
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Srivastava (Delhi)",
+   "id": "f17",
+   "name": "Neeta Agarwal",
+   "yrs": 58
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Khandelwal (Sanjeev)",
+   "id": "f18",
+   "name": "Sanjeev Khandelwal",
+   "yrs": 56,
+   "tent": true
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Bhatnagar",
+   "id": "f19",
+   "name": "Amitabh Bhatnagar",
+   "yrs": 55
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Bhatnagar",
+   "id": "f20",
+   "name": "Rahul Bhatnagar",
+   "yrs": 55
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Bhatnagar",
+   "id": "f21",
+   "name": "Rachit Bhatnagar",
+   "yrs": 55
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Bhatnagar",
+   "id": "f22",
+   "name": "Anurag Bhatnagar",
+   "yrs": 55
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Srivastava (Gwalior)",
+   "id": "f23",
+   "name": "Brijesh Srivastava",
+   "yrs": 54
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Srivastava (Gwalior)",
+   "id": "f24",
+   "name": "Rachna Srivastava",
+   "yrs": 51
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Khandelwal (Aarti)",
+   "id": "f25",
+   "name": "Aarti Khandelwal",
+   "yrs": 50
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Khandelwal (Anurag)",
+   "id": "f26",
+   "name": "Poonam Khandelwal",
+   "yrs": 47
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Jhunjhunwala (Goldy didi)",
+   "id": "f27",
+   "name": "Arpan Jhunjhunwala",
+   "yrs": 34,
+   "tent": true
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Jhunjhunwala (Goldy didi)",
+   "id": "f28",
+   "name": "Priya Jhunjhunwala (Goldy didi)",
+   "yrs": 32,
+   "tent": true
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Srivastava (Gwalior)",
+   "id": "f29",
+   "name": "Sanjeev Srivastava",
+   "yrs": 55
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Srivastava (Gwalior)",
+   "id": "f30",
+   "name": "Nandita Srivastava",
+   "yrs": 55
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Srivastava (Gwalior)",
+   "id": "f31",
+   "name": "Vansh Srivastava",
+   "yrs": 22
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Srivastava (Gwalior)",
+   "id": "f32",
+   "name": "Aryan Srivastava",
+   "yrs": 25
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Srivastava (Gwalior)",
+   "id": "f33",
+   "name": "Blossom Srivastava",
+   "yrs": 28
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Srivastava (Gwalior)",
+   "id": "f34",
+   "name": "Ravi Srivastava",
+   "yrs": 35
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Srivastava (Gwalior)",
+   "id": "f35",
+   "name": "Ashita Srivastava",
+   "yrs": 33
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Srivastava (Delhi)",
+   "id": "f36",
+   "name": "Ankita Srivastava",
+   "yrs": 30
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Anurag)",
+   "id": "f37",
+   "name": "Anurag Khandelwal",
+   "yrs": 34
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Khandelwal (Anurag)",
+   "id": "f38",
+   "name": "Deepika Khandelwal",
+   "yrs": 32
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Anurag)",
+   "id": "f39",
+   "name": "Mohit Khandelwal",
+   "yrs": 31,
+   "tent": true
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Khandelwal (Anurag)",
+   "id": "f40",
+   "name": "Kuntal Khandelwal",
+   "yrs": 30,
+   "tent": true
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Mahesh)",
+   "id": "f41",
+   "name": "Mahesh Khandelwal",
+   "yrs": 33
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Khandelwal (Mahesh)",
+   "id": "f42",
+   "name": "Nishi Khandelwal",
+   "yrs": 32
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Kedia",
+   "id": "f43",
+   "name": "Tanay Kedia"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Kedia",
+   "id": "f44",
+   "name": "Rashi Kedia"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Kedia",
+   "id": "f45",
+   "name": "Pankaj Kedia"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Kedia",
+   "id": "f46",
+   "name": "Shobha Kedia"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Kedia",
+   "id": "f47",
+   "name": "Niraj Kedia"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Kedia",
+   "id": "f48",
+   "name": "Priya Kedia"
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Old",
+   "family": "Srivastava (Gwalior)",
+   "id": "f49",
+   "name": "GK Srivastava",
+   "yrs": 80
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Old",
+   "family": "Srivastava (Gwalior)",
+   "id": "f50",
+   "name": "Sushma Srivastava",
+   "yrs": 75
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Srivastava (Gwalior)",
+   "id": "f51",
+   "name": "Simran Srivastava",
+   "yrs": 26
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Srivastava (Gwalior)",
+   "id": "f52",
+   "name": "Manju Srivastava (Gwalior)",
+   "yrs": 53
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Chaudhary",
+   "id": "f53",
+   "name": "Shreya Chaudhary"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Chaudhary",
+   "id": "f54",
+   "name": "Khushi Chaudhary"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Chaudhary",
+   "id": "f55",
+   "name": "Shashi Chaudhary (Gopi)"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Chaudhary",
+   "id": "f56",
+   "name": "Seema Chaudhary"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Old",
+   "family": "Binjrajka",
+   "id": "f57",
+   "name": "Pushpa Devi Binjrajka"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Binjrajka",
+   "id": "f58",
+   "name": "Sanjay Binjrajka"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Binjrajka",
+   "id": "f59",
+   "name": "Jyoti Binjrajka"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Binjrajka",
+   "id": "f60",
+   "name": "Harsh Binjrajka (Kanhaiya)"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Binjrajka",
+   "id": "f61",
+   "name": "Sakshi Binjrajka"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Binjrajka",
+   "id": "f62",
+   "name": "Sachin Binjrajka (Laddoo)"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Binjrajka",
+   "id": "f63",
+   "name": "Ranjeeta Binjrajka (Neha)"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Binjrajka (Mickey)",
+   "id": "f64",
+   "name": "Mickey Binjrajka"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Binjrajka (Mickey)",
+   "id": "f65",
+   "name": "Dviya Binjrajka"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Binjrajka (Shyam)",
+   "id": "f66",
+   "name": "Shyam Binjrajka"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Binjrajka (Shyam)",
+   "id": "f67",
+   "name": "Kanchan Binjrajka"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Old",
+   "family": "Kedia",
+   "id": "f68",
+   "name": "Jawaharlal Kedia"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Amit mama",
+   "id": "f69",
+   "name": "Amit Poddar"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Kedia",
+   "id": "f70",
+   "name": "Chinmay Kedia"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Chaudhary",
+   "id": "f71",
+   "name": "Raghav Chaudhary"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Kedia (Binod)",
+   "id": "f72",
+   "name": "Binod Kedia"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Kedia (Binod)",
+   "id": "f73",
+   "name": "Binod Kedia's wife"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Old",
+   "family": "Modi",
+   "id": "f74",
+   "name": "Deepak Modi"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Old",
+   "family": "Modi",
+   "id": "f75",
+   "name": "Alka Modi"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Old",
+   "family": "Dhanuka",
+   "id": "f76",
+   "name": "Purushottam Dhanuka"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Old",
+   "family": "Binjrajka",
+   "id": "f77",
+   "name": "Sulochana Misrani ji"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Kedia (Binod)",
+   "id": "f78",
+   "name": "Dhiraj Kedia (Gullu)"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Kedia (Binod)",
+   "id": "f79",
+   "name": "Mangtu chacha"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Goenka",
+   "id": "f80",
+   "name": "Ashok Goenka"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Goenka",
+   "id": "f81",
+   "name": "Archana Goenka (Dolly)"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Goenka",
+   "id": "f82",
+   "name": "Parul (Pappu mama)"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Goenka",
+   "id": "f83",
+   "name": "Nandini Goenka"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f84",
+   "name": "Piyush Panchal"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Binjrajka",
+   "id": "f85",
+   "name": "Madhav Nathani"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f86",
+   "name": "Liza Patel"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f87",
+   "name": "Mink Panjwani"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f88",
+   "name": "Yagnesh Salian"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f89",
+   "name": "Abhishek Shukla"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f90",
+   "name": "Advait Shirvaikar"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f91",
+   "name": "Bhavik Panchal"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f92",
+   "name": "Anuj Singhal"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f93",
+   "name": "Amol Agrawal"
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Khandelwal (Rajni)",
+   "id": "f94",
+   "name": "Rajni Khandelwal",
+   "yrs": 55
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Khandelwal (Rajni)",
+   "id": "f95",
+   "name": "Shyam Khandelwal",
+   "yrs": 57
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Atul)",
+   "id": "f96",
+   "name": "Atul Khandelwal",
+   "yrs": 39
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Khandelwal (Atul)",
+   "id": "f97",
+   "name": "Ritu Khandelwal",
+   "yrs": 38
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Khandelwal (Kajal)",
+   "id": "f98",
+   "name": "Kajal Khandelwal",
+   "yrs": 33
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Kajal)",
+   "id": "f99",
+   "name": "Rounak Khandelwal",
+   "yrs": 36
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Shah",
+   "id": "f100",
+   "name": "Shalini Shah",
+   "yrs": 55
+  },
+  {
+   "side": "Bride",
+   "gender": "",
+   "age": "Adult",
+   "family": "Shah",
+   "id": "f101",
+   "name": "Shrutika Shah",
+   "yrs": 28
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Jain",
+   "id": "f102",
+   "name": "Mansi Jain",
+   "yrs": 25
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Jain",
+   "id": "f103",
+   "name": "Mayank Jain",
+   "yrs": 26
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Anurag)",
+   "id": "f104",
+   "name": "Himanshu Khandelwal",
+   "yrs": 29
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Anurag)",
+   "id": "f105",
+   "name": "Abhinav Khandelwal",
+   "yrs": 30
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Simran's friends",
+   "id": "f106",
+   "name": "V Nivesha",
+   "yrs": 25
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Khandelwal (Anurag)",
+   "id": "f107",
+   "name": "Megha Khandelwal",
+   "yrs": 32,
+   "tent": true
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Kamal & Anisha",
+   "id": "f108",
+   "name": "Kamal Sajnani"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Kamal & Anisha",
+   "id": "f109",
+   "name": "Anisha Bilala"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Naresh & Vanshika",
+   "id": "f110",
+   "name": "Naresh Patel"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Naresh & Vanshika",
+   "id": "f111",
+   "name": "Vanshika Patel"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Elder",
+   "family": "Poddar",
+   "id": "f112",
+   "name": "Sanjeev Kumar Poddar (Mintu)"
+  },
+  {
+   "side": "Groom",
+   "gender": "F",
+   "age": "Elder",
+   "family": "Poddar",
+   "id": "f113",
+   "name": "Anuradha Devi Poddar"
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Anurag)",
+   "id": "f114",
+   "name": "Rajat Khandelwal",
+   "yrs": 26
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Anurag)",
+   "id": "f115",
+   "name": "Kalpesh Khandelwal",
+   "yrs": 32,
+   "tent": true
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f116",
+   "name": "Shreyas Gupta"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f117",
+   "name": "Vaibhav Singh"
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f118",
+   "name": "Suyash Jain",
+   "tent": true
+  },
+  {
+   "side": "Groom",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Tanay's friends",
+   "id": "f119",
+   "name": "Shreyansh Jain",
+   "tent": true
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Aarti)",
+   "id": "f120",
+   "name": "Ujwal Khandelwal",
+   "yrs": 22,
+   "tent": true
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Kid",
+   "family": "Khandelwal (Aarti)",
+   "id": "f121",
+   "name": "Atharv Khandelwal",
+   "yrs": 15
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Khandelwal (Anurag)",
+   "id": "f122",
+   "name": "Vedansh Khandelwal",
+   "yrs": 22
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Singh",
+   "id": "f123",
+   "name": "Kanchan Singh",
+   "yrs": 35
+  },
+  {
+   "side": "Bride",
+   "gender": "M",
+   "age": "Adult",
+   "family": "Singh",
+   "id": "f124",
+   "name": "Narendra Singh",
+   "yrs": 36
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Shiva & Sanskriti",
+   "id": "f125",
+   "name": "Sanskriti Agarwal",
+   "yrs": 26
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Simran's friends",
+   "id": "f126",
+   "name": "Shubhi Gupta",
+   "yrs": 26
+  },
+  {
+   "side": "Bride",
+   "gender": "F",
+   "age": "Adult",
+   "family": "Shiva & Sanskriti",
+   "id": "f127",
+   "name": "Shiva Dantare",
+   "yrs": 26
+  }
+ ],
+ "assign": {
+  "f0": "108",
+  "f1": "108",
+  "f2": "106",
+  "f3": "106",
+  "f4": "103",
+  "f5": "103",
+  "f8": "107",
+  "f9": "107",
+  "f14": "206",
+  "f15": "206",
+  "f16": "201",
+  "f17": "201",
+  "f19": "204",
+  "f20": "204",
+  "f21": "203",
+  "f22": "203",
+  "f23": "202",
+  "f24": "202",
+  "f29": "102",
+  "f30": "102",
+  "f32": "301",
+  "f36": "303",
+  "f43": "401",
+  "f44": "401",
+  "f45": "402",
+  "f46": "402",
+  "f47": "403",
+  "f48": "403",
+  "f49": "101",
+  "f50": "101",
+  "f51": "405",
+  "f52": "405",
+  "f53": "505",
+  "f54": "505",
+  "f55": "505",
+  "f56": "505",
+  "f57": "601",
+  "f58": "602",
+  "f59": "602",
+  "f60": "602",
+  "f61": "602",
+  "f62": "603",
+  "f63": "603",
+  "f64": "604",
+  "f65": "604",
+  "f66": "605",
+  "f67": "605",
+  "f68": "701",
+  "f69": "701",
+  "f72": "801",
+  "f73": "801",
+  "f74": "802",
+  "f75": "802",
+  "f76": "803",
+  "f77": "804",
+  "f78": "805",
+  "f79": "805",
+  "f80": "806",
+  "f81": "806",
+  "f82": "806",
+  "f83": "806",
+  "f84": "K104",
+  "f85": "K104",
+  "f86": "K105",
+  "f87": "K105",
+  "f88": "K106",
+  "f89": "K106",
+  "f90": "K107",
+  "f91": "K107",
+  "f92": "K108",
+  "f93": "K108",
+  "f94": "K202",
+  "f95": "K202",
+  "f96": "K205",
+  "f97": "K205",
+  "f98": "K203",
+  "f99": "K203",
+  "f100": "K204",
+  "f101": "K204",
+  "f104": "K206",
+  "f105": "K206",
+  "f106": "K304",
+  "f107": "K304",
+  "f108": "K303",
+  "f109": "K303",
+  "f110": "K306",
+  "f111": "K306",
+  "f116": "K401",
+  "f117": "K401",
+  "f118": "K402",
+  "f119": "K402",
+  "f120": "K302",
+  "f121": "K302",
+  "f122": "K301",
+  "f123": "K201",
+  "f124": "K201",
+  "f125": "K305",
+  "f126": "K305",
+  "f127": "K305",
+  "f102": "304",
+  "f103": "304",
+  "f37": "K207",
+  "f38": "K207",
+  "f34": "302",
+  "f35": "302",
+  "f41": "105",
+  "f42": "105",
+  "f39": "K208",
+  "f40": "K208",
+  "f12": "205",
+  "f13": "205",
+  "f10": "208",
+  "f11": "208",
+  "f6": "104",
+  "f7": "104",
+  "f27": "305",
+  "f28": "305",
+  "f114": "207",
+  "f18": "207",
+  "f115": "K301",
+  "f25": "404",
+  "f26": "404",
+  "f70": "306",
+  "f71": "306",
+  "f112": "702",
+  "f113": "702",
+  "f33": "301",
+  "f31": "102"
+ },
+ "auto": {},
+ "caps": {},
+ "rev": 5
+}
